@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.core.env.Environment;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @SpringBootApplication
 public class ScrambleWebApiApplication {
 
@@ -17,9 +20,8 @@ public class ScrambleWebApiApplication {
 		String message = String.format("\n----------------------------------------------------------\n\t"
 				+ "Access URL: http://localhost:%s/swagger-ui.html"
 				+ "\n----------------------------------------------------------", serverPort);
-		
-		// print until logback is done
-		System.out.println(message);
+
+		log.info(message);
 	}
 
 }
