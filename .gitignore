@@ -34,3 +34,5 @@ out/
 bin/
 
 .attach_pid*
+
+log/

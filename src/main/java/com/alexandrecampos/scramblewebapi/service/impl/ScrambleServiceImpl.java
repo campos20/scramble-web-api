@@ -9,6 +9,9 @@ import org.worldcubeassociation.tnoodle.scrambles.PuzzleRegistry;
 import com.alexandrecampos.scramblewebapi.service.ScrambleService;
 import com.alexandrecampos.scramblewebapi.vo.ScrambleVo;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class ScrambleServiceImpl implements ScrambleService {
 
@@ -16,6 +19,8 @@ public class ScrambleServiceImpl implements ScrambleService {
 
 	@Override
 	public ScrambleVo getScramble(String puzzle) {
+		log.info("Get scramble for {}", puzzle);
+
 		PuzzleRegistry lazyScrambler = getLazyScrambler(puzzle);
 		final Puzzle scrambler = lazyScrambler.getScrambler();
 		String scramble = scrambler.generateWcaScramble(r);

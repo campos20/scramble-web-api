@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
-    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+<configuration scan="true">
+
+	<property name="APP_NAME" value="scramble-web-api"/>
+	<property name="LOG_PATH" value="log"/>
+	<property name="PATTERN_LOG" value="%gray(%d{dd-MM-yy HH:mm:ss.SSS}) %boldGreen(${PID}) %highlight(%-5level) %-20.20logger{0} %20.20M : %m%ex{15}%n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <Pattern>${PATTERN_LOG}</Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/${APP_NAME}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/${APP_NAME}_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>5MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <charset>UTF-8</charset>
+            <Pattern>%d{dd-MM-yyyy HH:mm:ss.SSS} %-5level pid=${PID}, class=%-20.20logger{0}, m=%M, %m%n</Pattern>
+        </encoder>
+    </appender>
+
     <root level="INFO">
-        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
     </root>
-    <logger name="org.springframework.web" level="DEBUG"/>
+
 </configuration>
