@@ -8,6 +8,10 @@ group = 'com.alexandrecampos'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
+bootJar {
+    mainClassName = 'com.alexandrecampos.scramblewebapi.ScrambleWebApiApplication'
+}
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
