@@ -1,5 +1,6 @@
 package com.alexandrecampos.scramblewebapi.service.impl;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Before;
@@ -21,10 +22,17 @@ public class ScrambleServiceImplTest {
 	}
 
 	@Test
-	public void getScramblesTest() {
+	public void getScrambles() {
 		ScrambleVo scramble = service.getScramble("333fm");
 		String scrambleString = scramble.getScramble();
 		assertTrue(scrambleString.startsWith("R' U' F "));
+	}
+	
+	@Test
+	public void getScramblesUnknowPuzzle() {
+		// We are not failing unknown puzzle at the moment
+		ScrambleVo scramble = service.getScramble("FOO BAR");
+		assertNotNull(scramble.getScramble());
 	}
 
 }
