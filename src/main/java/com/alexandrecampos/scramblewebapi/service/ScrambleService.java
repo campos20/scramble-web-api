@@ -2,6 +2,7 @@ package com.alexandrecampos.scramblewebapi.service;
 
 import com.alexandrecampos.scramblewebapi.vo.ScrambleVo;
 
+@FunctionalInterface
 public interface ScrambleService {
 
 	/**
