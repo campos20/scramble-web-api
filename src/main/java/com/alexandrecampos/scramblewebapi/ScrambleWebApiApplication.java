@@ -2,15 +2,24 @@ package com.alexandrecampos.scramblewebapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.core.env.Environment;
 
 @SpringBootApplication
 public class ScrambleWebApiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ScrambleWebApiApplication.class, args);
+		SpringApplication app = new SpringApplication(ScrambleWebApiApplication.class);
+		ConfigurableApplicationContext applicationContext = app.run(args);
+		Environment env = applicationContext.getEnvironment();
+		String serverPort = env.getProperty("server.port");
 
-		// This print is just for now, until the configuration of logback
-		System.out.println("http://localhost:2020/swagger-ui.html");
+		String message = String.format("\n----------------------------------------------------------\n\t"
+				+ "Access URL: http://localhost:%s/swagger-ui.html"
+				+ "\n----------------------------------------------------------", serverPort);
+		
+		// print until logback is done
+		System.out.println(message);
 	}
 
 }
