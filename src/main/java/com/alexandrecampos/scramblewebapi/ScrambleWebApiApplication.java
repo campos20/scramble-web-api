@@ -1,0 +1,13 @@
+package com.alexandrecampos.scramblewebapi;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ScrambleWebApiApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ScrambleWebApiApplication.class, args);
+	}
+
+}
