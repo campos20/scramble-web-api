@@ -6,5 +6,5 @@ import lombok.Data;
 public class ScrambleVo {
 	private String puzzle;
 	private String scramble;
-
+	private String scrambler;
 }

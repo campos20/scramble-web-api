@@ -33,6 +33,7 @@ public class ScrambleServiceImpl implements ScrambleService {
 		ScrambleVo result = new ScrambleVo();
 		result.setPuzzle(puzzle);
 		result.setScramble(scramble);
+		result.setScrambler(scrambler.getShortName());
 
 		return result;
 	}
