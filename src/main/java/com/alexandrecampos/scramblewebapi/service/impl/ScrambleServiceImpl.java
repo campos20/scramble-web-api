@@ -34,6 +34,7 @@ public class ScrambleServiceImpl implements ScrambleService {
 
 	@Override
 	public ScrambleVo getScrambles(String puzzle, Integer n) throws InvalidParamException {
+		// TODO cache scrambles using threads (or coroutines)
 
 		int numberOfScrambles = Optional.ofNullable(n).orElse(minScrambles);
 		log.info("Generate {} scrambles for {}", numberOfScrambles, puzzle);
