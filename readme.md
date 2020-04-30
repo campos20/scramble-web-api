@@ -4,7 +4,7 @@ Scramble Web API is written in Java and delivers scrambles for official puzzles 
 
 ## Project Details
 
-Scramble Web API uses [Gradle](https://gradle.com) and [Spring Boot](https://spring.io/projects/spring-boot). On a simple version, this project serves the web with scrambles from [tnoodle-lib](https://github.com/thewca/tnoodle-lib). Your IDE should support [Lombok](https://projectlombok.org/) as well.
+Scramble Web API uses [Gradle](https://gradle.com), [Spring Boot](https://spring.io/projects/spring-boot) and [Swagger](https://swagger.io/). On a simple version, this project serves the web with scrambles from [tnoodle-lib](https://github.com/thewca/tnoodle-lib). Your IDE should support [Lombok](https://projectlombok.org/) as well.
 
 ### Overview
 
@@ -18,7 +18,7 @@ Get an overview of the core project tasks by executing
 
 Gradle automagically handles all dependencies for you. You just need an Internet connection upon your first build run!
 
-When you're ready to develop, run the following and then visit <http://localhost:2014/scramble/>
+When you're ready to develop, run the following and then visit the logged url for the documentation, probably <http://localhost:2020/swagger-ui.html>, unless you change the `server.port` property.
 
     ./gradlew bootRun
 
