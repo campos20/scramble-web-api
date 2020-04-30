@@ -32,3 +32,7 @@ out/
 .vscode/
 
 bin/
+
+.attach_pid*
+
+log/
