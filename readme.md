@@ -2,6 +2,8 @@
 
 Scramble Web API is written in Java and delivers scrambles for official puzzles from the [World Cube Association](https://github.com/thewca).
 
+You can see a live version of the documentation at [https://scramble-web-api.herokuapp.com/swagger-ui.html#/](https://scramble-web-api.herokuapp.com/swagger-ui.html#/).
+
 ## Project Details
 
 Scramble Web API uses [Gradle](https://gradle.com), [Spring Boot](https://spring.io/projects/spring-boot) and [Swagger](https://swagger.io/). On a simple version, this project serves the web with scrambles from [tnoodle-lib](https://github.com/thewca/tnoodle-lib). Your IDE should support [Lombok](https://projectlombok.org/) as well.
