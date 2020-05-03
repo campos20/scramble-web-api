@@ -34,8 +34,9 @@ public class ScrambleController {
 			+ "If you use an invalid option, you'll get a 3x3x3 scramble.")
 	@GetMapping(path = "{puzzle}")
 	public ResponseEntity<ScrambleVo> getScrambles(@PathVariable String puzzle,
-			@RequestParam(defaultValue = "1") Integer numberOfScrambler) throws InvalidParamException {
-		return ResponseEntity.ok(scrambleService.getScrambles(puzzle, numberOfScrambler));
+
+			@RequestParam(defaultValue = "1") Integer numberOfScrambles) throws InvalidParamException {
+		return ResponseEntity.ok(scrambleService.getScrambles(puzzle, numberOfScrambles));
 	}
 
 }

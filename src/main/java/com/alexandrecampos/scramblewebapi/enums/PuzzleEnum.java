@@ -18,7 +18,7 @@ public enum PuzzleEnum {
 	THREE_FM("333fm", PuzzleRegistry.THREE_FM, "3x3x3 Fewest Moves"),
 	PYRA("pyra", PuzzleRegistry.PYRA, "Pyraminx"),
 	SQ1("sq1", PuzzleRegistry.SQ1, "Square-1"),
-	MEGA("minx", PuzzleRegistry.MEGA, "Meganix"),
+	MEGA("minx", PuzzleRegistry.MEGA, "Megaminx"),
 	CLOCK("clock", PuzzleRegistry.CLOCK, "Clock"),
 	SKEWB("skewb", PuzzleRegistry.SKEWB, "Skewb"),
 	THREE_OH("333oh", PuzzleRegistry.THREE, "3x3x3 OH"),
